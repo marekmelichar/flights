@@ -110,7 +110,7 @@ class App extends Component {
   }
 
   render() {
-    const {from, to, date, isLoadingData, showLocationsFromList, locationsFrom, showLocationsToList, locationsTo, data} = this.state
+    const {from, to, date, isLoadingData, showLocationsFromList, locationsFrom, showLocationsToList, locationsTo} = this.state
 
     return(
       <div id="search" className="row">
