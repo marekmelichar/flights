@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DatePicker from 'react-datepicker'
 import moment from 'moment';
+import axios from 'axios'
 
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -12,7 +13,8 @@ class App extends Component {
     this.state = {
       from: '',
       to: '',
-      date: moment()
+      date: moment(),
+      data: []
     }
   }
 
@@ -20,23 +22,48 @@ class App extends Component {
     e.preventDefault()
 
     const {from, to, date} = this.state
+    const parsedDate = moment(date).format('DD/MM/YYYY')
 
-    console.log(from, to, date);
+    // axios.get(`https://api.skypicker.com/flights?sort=price&asc=1&locale=en-US&flyFrom=${from}&to=${to}&dateFrom=${parsedDate}`)
+    axios.get(`https://api.skypicker.com/flights?sort=price&asc=1&locale=en-US&flyFrom=${from}&to=${to}&dateFrom=${parsedDate}&limit=20&offset=0`)
+    .then(response => {
+      this.setState({ data: response.data })
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
 
-  handleDate = e => {
-    e.preventDefault()
+  renderSearchResults = () => {
+    const {data} = this.state
 
+    console.log(data);
+
+    if (data.data) {
+      return data.data.map((item, i) => {
+        return (<li key={`${item}_${i}`}>
+          {item.price} {data.currency} <br/>
+          airline: {item.airlines.map(airline => airline)} <br/>
+          duration: {item.fly_duration} <br/>
+          departure: {moment(item.dTime).format('DD/MM/YYYY')} <br/>
+          arrival: {moment(item.aTime).format('DD/MM/YYYY')} <br/>
+          from: {item.cityFrom} <br/>
+          to: {item.cityTo}
+        </li>)
+      })
+    }
   }
 
   render() {
     const {from, to, date} = this.state
 
+
     return(
-      <div className="row">
+      <div className="row search">
         <form onSubmit={e => this.handleSearch(e)}>
             <div className="column size_25 form-group text-center">
               <input
+                required={true}
                 type="text"
                 className="form-input-from"
                 id="from"
@@ -47,6 +74,7 @@ class App extends Component {
             </div>
             <div className="column size_25 form-group text-center">
               <input
+                required={true}
                 type="text"
                 className="form-input-to"
                 id="to"
@@ -67,6 +95,10 @@ class App extends Component {
             </div>
 
           </form>
+
+          <div id="results" className="row">
+            <ul>{this.renderSearchResults()}</ul>
+          </div>
       </div>
     )
   }
