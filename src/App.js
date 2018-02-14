@@ -131,7 +131,9 @@ class App extends Component {
                   value={from}
                 />
                 {showLocationsFromList &&
-                  <ul className="locations-list">{locationsFrom.map((location, i) => {
+                  <ul className="locations-list">
+                    <span className="close" onClick={() => this.setState({ showLocationsFromList: false })}>X</span>
+                    {locationsFrom.map((location, i) => {
                       return <li key={`${location.int_id}_${i}`} onClick={() => this.setState({ from: location.name, showLocationsFromList: false })}>{location.name}</li>
                     })}
                   </ul>}
@@ -148,7 +150,9 @@ class App extends Component {
                   value={to}
                 />
                 {showLocationsToList &&
-                  <ul className="locations-list">{locationsTo.map((location, i) => {
+                  <ul className="locations-list">
+                    <span className="close" onClick={() => this.setState({ showLocationsToList: false })}>X</span>
+                    {locationsTo.map((location, i) => {
                       return <li key={`${location.int_id}_${i}`} onClick={() => this.setState({ to: location.name, showLocationsToList: false })}>{location.name}</li>
                     })}
                   </ul>}
