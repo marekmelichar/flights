@@ -1,0 +1,356 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+*:active,
+*:hover,
+*:focus,
+*:visited {
+  outline: 0;
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  cursor: pointer;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  font-family: open_sanslight, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: open_sansbold, sans-serif;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+button {
+  cursor: pointer;
+}
+
+.clear-before-this:before,
+.clear-before-this:after,
+.clear-after-this:before,
+.clear-after-this:after {
+  content: "";
+  display: table;
+}
+
+.row {
+  display: block;
+  width: 1280px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.row.fit, .row .row, .row.flex .row.collapse {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+  margin: 0px -10px;
+}
+
+.row.collapse > .column {
+  padding: 0;
+}
+
+.row:before, .row:after {
+  content: "";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.row .row.not-fit, .row .row.collapse {
+  margin: 0;
+}
+
+.column {
+  display: block;
+  float: left;
+  padding: 0 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[class*="column"]+[class*="column"]:last-child {
+  float: right;
+}
+
+.size_100 {
+  float: none;
+}
+
+.size_75 {
+  width: 75%;
+}
+
+.size_60 {
+  width: 60%;
+}
+
+.size_50 {
+  width: 50%;
+}
+
+.size_25 {
+  width: 25%;
+}
+
+.size_20 {
+  width: 20%;
+}
+
+/*
+******** HELPERS
+*/
+
+.margin-top-1 {
+  margin-top: 1em;
+}
+
+.margin-top-2 {
+  margin-top: 2em;
+}
+
+.margin-bottom-1 {
+  margin-bottom: 1em;
+}
+
+.margin-bottom-1_5 {
+  margin-bottom: 1.5em;
+}
+
+.margin-bottom-2 {
+  margin-bottom: 2em;
+}
+
+.margin-left-1 {
+  margin-left: 1em;
+}
+
+.margin-right-1 {
+  margin-right: 1em;
+}
+
+.padding_top_1 {
+  padding-top: 1em;
+}
+
+.padding_top_2 {
+  padding-top: 2em;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.float-none {
+  float: none;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.word-break-all {
+  word-break: break-all;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+
+.row .row.collapse > .column.size_75 {
+  width: 75% !important;
+}
+
+.row .row.collapse > .column.size_25 {
+  width: 25% !important;
+}
+
+.row .row.collapse > .column {
+  float: left;
+}
+
+.row .row.collapse > .column:last-child {
+  float: right;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'open_sanslight';
+    src: url('./fonts/open_sans/opensans-light-webfont.eot');
+    src: url('./fonts/open_sans/opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/open_sans/opensans-light-webfont.woff2') format('woff2'),
+         url('./fonts/open_sans/opensans-light-webfont.woff') format('woff'),
+         url('./fonts/open_sans/opensans-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sanslight_italic';
+    src: url('./fonts/open_sans/opensans-lightitalic-webfont.eot');
+    src: url('./fonts/open_sans/opensans-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/open_sans/opensans-lightitalic-webfont.woff2') format('woff2'),
+         url('./fonts/open_sans/opensans-lightitalic-webfont.woff') format('woff'),
+         url('./fonts/open_sans/opensans-lightitalic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('./fonts/open_sans/opensans-regular-webfont.eot');
+    src: url('./fonts/open_sans/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/open_sans/opensans-regular-webfont.woff2') format('woff2'),
+         url('./fonts/open_sans/opensans-regular-webfont.woff') format('woff'),
+         url('./fonts/open_sans/opensans-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('./fonts/open_sans/opensans-italic-webfont.eot');
+    src: url('./fonts/open_sans/opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/open_sans/opensans-italic-webfont.woff2') format('woff2'),
+         url('./fonts/open_sans/opensans-italic-webfont.woff') format('woff'),
+         url('./fonts/open_sans/opensans-italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('./fonts/open_sans/opensans-bold-webfont.eot');
+    src: url('./fonts/open_sans/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/open_sans/opensans-bold-webfont.woff2') format('woff2'),
+         url('./fonts/open_sans/opensans-bold-webfont.woff') format('woff'),
+         url('./fonts/open_sans/opensans-bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'open_sansbold_italic';
+    src: url('./fonts/open_sans/opensans-bolditalic-webfont.eot');
+    src: url('./fonts/open_sans/opensans-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/open_sans/opensans-bolditalic-webfont.woff2') format('woff2'),
+         url('./fonts/open_sans/opensans-bolditalic-webfont.woff') format('woff'),
+         url('./fonts/open_sans/opensans-bolditalic-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+
+
+
+
+
+/* CSS for page */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tablet */
+
+@media screen and (min-width: 767px) and (max-width: 768px) {
+
+}
+
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+
+
+}
+
+/* Small screen */
+
+@media screen and (max-width: 321px) {
+
+
+}
