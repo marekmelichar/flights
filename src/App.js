@@ -31,10 +31,8 @@ class App extends Component {
     const parsedDate = moment(date).format('DD/MM/YYYY')
 
     // axios.get(`https://api.skypicker.com/flights?sort=price&asc=1&locale=en-US&flyFrom=${from}&to=${to}&dateFrom=${parsedDate}`)
-    axios.get(`https://api.skypicker.com/flights?sort=price&asc=1&locale=en-US&flyFrom=${from}&to=${to}&dateFrom=${parsedDate}&limit=20&offset=0`)
+    axios.get(`https://api.skypicker.com/flights?sort=price&asc=1&locale=en-US&flyFrom=${from}&to=${to}&dateFrom=${parsedDate}&limit=5&offset=0`)
     .then(response => {
-      console.log(response.data);
-
       this.setState({
         data: response.data,
         isLoadingData: false
@@ -112,7 +110,7 @@ class App extends Component {
   }
 
   render() {
-    const {from, to, date, isLoadingData, showLocationsFromList, locationsFrom, showLocationsToList, locationsTo} = this.state
+    const {from, to, date, isLoadingData, showLocationsFromList, locationsFrom, showLocationsToList, locationsTo, data} = this.state
 
     return(
       <div id="search" className="row">
