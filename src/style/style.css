@@ -49,6 +49,10 @@ button {
   cursor: pointer;
 }
 
+strong {
+  font-family: open_sansbold, sans-serif;
+}
+
 .clear-before-this:before,
 .clear-before-this:after,
 .clear-after-this:before,
@@ -322,7 +326,89 @@ button {
 
 /* CSS for page */
 
+#search {
+  margin-top: 2em;
+}
 
+#search h1 {
+  text-align: left;
+  margin: 0 0 1em 10px;
+}
+
+#search input {
+  width: 100%;
+  height: 4em;
+  box-shadow: none;
+  padding: 0.5em;
+}
+
+#search .react-datepicker-wrapper {
+  width: 100%;
+}
+
+#search .react-datepicker__input-container {
+  width: 100%;
+}
+
+#search .confirm-button {
+  height: 4em;
+  width: 10em;
+  margin-top: 22px;
+}
+
+#results {
+  margin-top: 2em;
+  padding: 0 10px;
+}
+
+#results ul {
+  list-style-type: none;
+}
+
+#results ul li {
+  border: 1px solid #ddd;
+  margin-bottom: 2em;
+  color: #000;
+
+  -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.05);
+  -moz-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.05);
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.05);
+}
+
+.result {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 4em;
+}
+
+.result img {
+  margin: 0 3px;
+}
+
+.confirm-button.green {
+  background-color: green;
+  border: 1px solid green;
+  color: #fff;
+}
+
+.locations-list {
+  list-style-type: none;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+
+  -webkit-box-shadow: 3px 3px 30px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 3px 3px 30px 0px rgba(0,0,0,0.3);
+  box-shadow: 3px 3px 30px 0px rgba(0,0,0,0.3);
+}
+
+.locations-list li {
+  margin: 10px 0;
+  cursor: pointer;
+}
 
 
 
